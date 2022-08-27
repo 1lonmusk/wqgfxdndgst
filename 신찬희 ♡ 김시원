@@ -1,0 +1,60 @@
+
+
+
+
+# def solution(survey, choices):
+#     answer = ''
+#     point = [0, -3, -2, -1, 0, 1, 2, 3]
+#     type = {"RT": 0, "CF": 0, "JM": 0, "AN": 0}
+#
+#     for i in range(len(survey)):
+#         if survey[i] not in type:
+#             type[survey[i][::-1]] += -point[choices[i]]
+#         else:
+#             type[survey[i]] += point[choices[i]]
+#
+#     for j in type:
+#         if type[j] <= 0:
+#             answer += j[0]
+#         else:
+#             answer += j[1]
+#
+#     return answer
+# survay = ["AN", "CF", "MJ", "RT", "NA"]
+# c=[5, 3, 2, 7, 5]
+# print(solution(survay,c))
+
+
+
+
+# 야구 게임
+
+
+import random
+
+answer = []
+while len(answer) < 3:
+    number = random.randint(1,9)
+    if number not in answer:
+        answer.append(number)
+
+cnt = 10
+ball = 0
+strike = 0
+
+
+while True:
+    guess = input().split()
+    for i in range(len(guess)):
+        guess[i] = int(guess[i])
+    for j in guess:
+        print(j, type(j))
+
+
+
+
+    cnt -= 1
+    if cnt == 0:
+        print("lost")
+        print("정답은: ", answer)
+        exit()
